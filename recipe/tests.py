@@ -10,7 +10,7 @@ class MainViewTest(TestCase):
 
     def test_main_view(self):
         response = self.client.get(reverse('main'))
-        self.assertEqual(response.status_code, 200)  # Ensure the response is successful
-        self.assertTemplateUsed(response, 'main.html')  # Ensure the correct template is used
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'main.html')
         self.assertQuerysetEqual(response.context['recipes'], ['<Recipe: Recipe 1>', '<Recipe: Recipe 2>'])
 
